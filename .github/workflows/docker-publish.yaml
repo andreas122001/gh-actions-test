@@ -47,7 +47,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: true
-          tags: ${{ github.sha }}
+          tags: test
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max

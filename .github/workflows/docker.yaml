@@ -15,13 +15,14 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  USERNAME: ${{ github.actor }}
-  PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   push-image:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     steps:
       - name: Setup
         uses: actions/checkout@v3
